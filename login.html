@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área de Membros — Método SEC</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/members.css">
+</head>
+<body>
+
+<main class="login-screen">
+  <div class="login-card reveal is-visible">
+    <img src="assets/logo.png" alt="Método SEC" class="login-card__logo">
+    <p class="eyebrow center">ÁREA DE MEMBROS</p>
+    <h1 class="login-card__title">Método SEC</h1>
+    <p class="login-card__subtitle">Entre com seu login e senha para acessar os treinos, orientações nutricionais e cardápios.</p>
+
+    <form id="loginForm" class="login-form">
+      <label>
+        Login
+        <input type="text" id="loginUser" name="user" autocomplete="username" required>
+      </label>
+      <label>
+        Senha
+        <input type="password" id="loginPass" name="pass" autocomplete="current-password" required>
+      </label>
+      <p class="login-form__error" id="loginError">Login ou senha incorretos.</p>
+      <button type="submit" class="btn btn--primary btn--full">Entrar</button>
+    </form>
+
+    <a href="index.html#contato" class="login-card__help">Esqueci minha senha / Ainda não sou aluno(a)</a>
+  </div>
+</main>
+
+<script src="js/auth.js"></script>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = document.getElementById('loginUser').value.trim();
+    const pass = document.getElementById('loginPass').value;
+    const errorEl = document.getElementById('loginError');
+
+    if (attemptLogin(user, pass)) {
+      window.location.href = 'area-membros.html';
+    } else {
+      errorEl.classList.add('is-visible');
+    }
+  });
+</script>
+</body>
+</html>

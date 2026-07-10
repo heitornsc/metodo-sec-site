@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área de Membros — Método SEC</title>
+<meta name="description" content="Método SEC — Sistema de Emagrecimento Consciente: treinos, orientações nutricionais e cardápios para alunas e alunos.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/members.css">
+<script src="js/auth.js"></script>
+<script>requireLogin();</script>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="Método SEC" class="brand__logo">
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Site principal</a>
+      <a href="#treinos">Treinos</a>
+      <a href="#nutricao">Nutrição</a>
+      <a href="#" id="logoutLink" class="logout-link">Sair</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- MEMBERS HERO -->
+  <section class="members-hero">
+    <div class="members-hero__glow"></div>
+    <div class="container members-hero__inner">
+      <p class="eyebrow center">ÁREA DE MEMBROS</p>
+      <h1>MÉTODO <span class="text-green">SEC</span></h1>
+      <p>Sistema de Emagrecimento Consciente — seus treinos, orientações nutricionais e cardápios, tudo em um só lugar.</p>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="members-dashboard">
+    <div class="container">
+
+      <p class="eyebrow" id="treinos">SEUS TREINOS</p>
+      <h2 class="section-title" style="text-align:left; margin-bottom:24px;">Escolha o dia</h2>
+
+      <div class="day-tabs" id="dayTabs">
+        <button class="day-tab is-active" data-day="seg">Segunda<span>5 treinos</span></button>
+        <button class="day-tab" data-day="ter">Terça<span>4 treinos</span></button>
+        <button class="day-tab" data-day="qua">Quarta<span>4 treinos</span></button>
+        <button class="day-tab" data-day="qui">Quinta<span>4 treinos</span></button>
+        <button class="day-tab" data-day="sex">Sexta<span>4 treinos</span></button>
+        <button class="day-tab" data-day="sab">Sábado<span>2 treinos</span></button>
+      </div>
+
+      <div class="workout-grid" id="workoutGrid">
+        <!-- JS preenche os cards de acordo com o dia selecionado -->
+      </div>
+      <p class="results__note">* Para colocar a foto/capa de cada treino, salve em <code>assets/treinos/</code> como <code>seg-1.jpg</code>, <code>seg-2.jpg</code> (dia + posição do card) — substitui o placeholder automaticamente.</p>
+
+      <p class="eyebrow" id="nutricao" style="margin-top:64px;">ORIENTAÇÕES NUTRICIONAIS</p>
+      <h2 class="section-title" style="text-align:left; margin-bottom:24px;">Cardápio de hoje</h2>
+
+      <div class="diet-grid">
+        <div class="diet-card reveal is-visible">
+          <div class="diet-card__thumb">
+            <img src="assets/treinos/cardapio-cafe.jpg" alt="Café da manhã" onerror="this.style.display='none'">
+            <svg viewBox="0 0 24 24"><path d="M4 3v18M4 3c4 0 4 4 4 4s0-4 4-4M8 7v14M15 3v18a3 3 0 0 0 3-3V3a3 3 0 0 0-3 0Z"/></svg>
+          </div>
+          <div class="diet-card__info">
+            <strong>Café da manhã</strong>
+            <span>Proteína + carboidrato de baixo índice glicêmico</span>
+          </div>
+        </div>
+        <div class="diet-card reveal is-visible">
+          <div class="diet-card__thumb">
+            <img src="assets/treinos/cardapio-almoco.jpg" alt="Almoço" onerror="this.style.display='none'">
+            <svg viewBox="0 0 24 24"><path d="M4 3v18M4 3c4 0 4 4 4 4s0-4 4-4M8 7v14M15 3v18a3 3 0 0 0 3-3V3a3 3 0 0 0-3 0Z"/></svg>
+          </div>
+          <div class="diet-card__info">
+            <strong>Almoço</strong>
+            <span>Proteína magra + vegetais + fonte de fibra</span>
+          </div>
+        </div>
+        <div class="diet-card reveal is-visible">
+          <div class="diet-card__thumb">
+            <img src="assets/treinos/cardapio-jantar.jpg" alt="Jantar" onerror="this.style.display='none'">
+            <svg viewBox="0 0 24 24"><path d="M4 3v18M4 3c4 0 4 4 4 4s0-4 4-4M8 7v14M15 3v18a3 3 0 0 0 3-3V3a3 3 0 0 0-3 0Z"/></svg>
+          </div>
+          <div class="diet-card__info">
+            <strong>Jantar</strong>
+            <span>Refeição leve e de fácil digestão</span>
+          </div>
+        </div>
+      </div>
+      <p class="results__note">* Para colocar fotos reais dos pratos, salve em <code>assets/treinos/</code> como <code>cardapio-cafe.jpg</code>, <code>cardapio-almoco.jpg</code>, <code>cardapio-jantar.jpg</code>.</p>
+
+      <p class="eyebrow" id="materiais" style="margin-top:64px;">MATERIAIS</p>
+      <h2 class="section-title" style="text-align:left; margin-bottom:24px;">Para baixar</h2>
+
+      <div class="pdf-list" id="pdfList">
+        <a class="pdf-item reveal is-visible" href="assets/pdfs/cardapio-semanal.pdf" download>
+          <span class="pdf-item__icon">PDF</span>
+          <span class="pdf-item__info">
+            <strong>Cardápio semanal</strong>
+            <span>Baixar arquivo</span>
+          </span>
+        </a>
+        <a class="pdf-item reveal is-visible" href="assets/pdfs/plano-de-treino.pdf" download>
+          <span class="pdf-item__icon">PDF</span>
+          <span class="pdf-item__info">
+            <strong>Plano de treino</strong>
+            <span>Baixar arquivo</span>
+          </span>
+        </a>
+      </div>
+      <p class="results__note">* Para disponibilizar o PDF, salve o arquivo em <code>assets/pdfs/</code> com o nome exato (ex: <code>cardapio-semanal.pdf</code>). Para adicionar mais materiais, copie um bloco <code>.pdf-item</code> em <code>area-membros.html</code> e ajuste o nome do arquivo.</p>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL DE VÍDEO -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal__inner">
+    <div class="video-modal__header">
+      <strong id="videoModalTitle"></strong>
+      <button type="button" class="video-modal__close" id="videoModalClose" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="video-modal__frame" id="videoModalFrame"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <img src="assets/logo.png" alt="Método SEC" class="footer__logo">
+    <nav class="footer__nav">
+      <a href="index.html">Site principal</a>
+      <a href="#treinos">Treinos</a>
+      <a href="#nutricao">Nutrição</a>
+    </nav>
+    <p class="footer__legal">© 2026 Método SEC — Sistema de Emagrecimento Consciente. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/members.js"></script>
+<script>
+  document.getElementById('logoutLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+  });
+  document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
+  document.getElementById('videoModal').addEventListener('click', (e) => {
+    if (e.target.id === 'videoModal') closeVideoModal();
+  });
+</script>
+</body>
+</html>
